@@ -6,7 +6,6 @@ import PokemonApi from './fetch';
 function App() {
   return (
     <div className="pokemon">
-      포켓몬 api
       <PokemonApi />
     </div>
   );

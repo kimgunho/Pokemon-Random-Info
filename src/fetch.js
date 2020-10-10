@@ -1,19 +1,25 @@
 import React,{Component} from 'react';
+import Utill from './utill';
 
 class PokemonApi extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            data : ''
+            id : '1',
+            name : '',
+            img : '',
         }
     }
 
     callApi = () => {
-        fetch('https://jsonplaceholder.typicode.com/todos/1')
+        fetch(`https://pokeapi.co/api/v2/pokemon/${this.state.id}`)
         .then(res => res.json())
         .then(json => {
             this.setState({ 
-                data : json.title
+                key : json.id,
+                id : json.id,
+                name : json.name,
+                img : json.sprites.front_default
             })
         })
     }
@@ -22,7 +28,12 @@ class PokemonApi extends React.Component{
     }
     render(){
         return(
-        <h3>{this.state.data? this.state.data : '데이터를 불러오는 중입니다.'}</h3>
+        /* <h3>{this.state.name? this.state.name : '데이터를 불러오는 중입니다.'}</h3> */
+        <div>
+            <Utill />
+            <h3>{this.state.name}</h3>
+            <img src={this.state.img} alt={this.state.name} />
+        </div>
         )
     }
 }
