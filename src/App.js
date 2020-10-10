@@ -1,11 +1,13 @@
 import React from 'react';
-import Pokemon from './fetch';
-
+import PokemonApi from './fetch';
+//import logo from './logo.svg';
+//import './App.css';
 
 function App() {
   return (
-    <div className="PokemonBox">
-      <Pokemon />
+    <div className="pokemon">
+      포켓몬 api
+      <PokemonApi />
     </div>
   );
 }
