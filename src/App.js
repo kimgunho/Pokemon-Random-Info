@@ -5,7 +5,7 @@ import React from 'react';
 function App() {
   return (
     <div className="pokemon">
-      포켓몬 api
+      포켓몬 api입니다.
     </div>
   );
 }
